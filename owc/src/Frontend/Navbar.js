@@ -27,8 +27,8 @@ export default function Navbar1() {
    
   <label> <NavbarBrand onClick={()=>{history.push('home')}} style={{"font-family": 'Source Serif Pro', 'fontSize':'2.5rem',color:'White'}} >One Who Creates</NavbarBrand>
   </label>
-      <Navbar.Toggle className="nav-link nav-link-itr"  aria-controls="basic-navbar-nav" style={{color:"white"}} />
-      <Navbar.Collapse id="basic-navbar-nav" bg='white'>
+      <Navbar.Toggle  className="btn btn-danger"  aria-controls="basic-navbar-nav" style={{color:"white"}} />
+      <Navbar.Collapse  id="basic-navbar-nav" variant="light">
         <Nav className="me-auto">
 
           
