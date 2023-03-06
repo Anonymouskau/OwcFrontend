@@ -53,8 +53,12 @@ export  default function Edituser  ()  {
       <button  onClick={()=>{
         axios.post(url.server+'/User/edituser',state).then(res=>{
                alert("Please Relogin to See changes  🙂🙂🙂🙂" )
-               history.push("user")             
-        
+            if(   sessionStorage.getItem("role")=="Begin Journey With Us" ){
+              history.push("Architect")
+            }          
+            else{
+              history.push("user")
+            }
         }).catch(err=>{console.log(err)})
          
 

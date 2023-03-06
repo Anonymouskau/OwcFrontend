@@ -10,7 +10,7 @@ export default function Register() {
     password: "",
     phoneno: "",
     repass: "",
-    role: "",
+    role: "Searching for WorkSpace",
   })
   const handler=(e)=>{
    
@@ -22,6 +22,7 @@ export default function Register() {
    
 }
 const registeration=()=>{
+  alert("Registration is processing")
  const{name, email, password, repass,phoneno, role}=user
  if(name && email && password===repass && phoneno.length===10 || role){
   axios.post(url.server+"/User/user",user).then(()=>{alert(`Welcome ${user.name} to Owc ✌️✌️✌️` )
@@ -30,7 +31,7 @@ const registeration=()=>{
   }
   else{
 
-    alert(`Ohh someting 😓🤒😵‍💫😵Went wrong Please Check credentials`)
+    alert(`Ohh someting 😓🤒 😵😵Went wrong Please Check credentials`)
   }
     
 } 
@@ -121,7 +122,7 @@ const registeration=()=>{
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <i class="fas fa-phone-square"></i>
                           <div className="form-outline flex-fill mb-0">
                             <input
                               onChange={handler}
@@ -136,9 +137,12 @@ const registeration=()=>{
                             </label>
                           </div>
                         </div>
+                        <label className="form-label" for="form3Example4cd">
+                              What are You looking for?
+                            </label>
 
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <i class="fas fa-at"></i>
                           <div className="form-outline flex-fill mb-0">
                             <select
                               onChange={handler}
@@ -150,9 +154,7 @@ const registeration=()=>{
                               <option>Searching for WorkSpace</option>
                               <option>Begin Journey With Us</option>
                             </select>
-                            <label className="form-label" for="form3Example4cd">
-                              What are You looking for?
-                            </label>
+                         
                           </div>
                         </div>
 
